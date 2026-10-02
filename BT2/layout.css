@@ -1,19 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
 .a {
-    /* styles for the first div */
-    padding: 13px 16px;
+    /* Giữ nguyên nền và viền cũ */
+    padding: 13px 20px;
     border-radius: 12px;
     background: #11172b;
     color: white;
+    
+    /* THÊM 3 DÒNG NÀY để dàn hàng ngang và căn giữa */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 .a1 {
-    /* styles for the button in the first div */
-    padding: 8px 11px;
+    text-align: center;
+    margin: 0; /* Xóa khoảng trống thừa */
+}
+
+.a2 {
+    padding: 8px 16px;
     border: 0;
     border-radius: 999px;
     background: #ff6b35;
     color: white;
     cursor: pointer;
+}
+
+/* --- THÊM PHẦN CSS MỚI CHO NÚT GIỎ HÀNG --- */
+
+.cart-container {
+    position: relative; /* Làm gốc tọa độ cho số 0 bay lên góc */
+    right: 0;
+    top: 0;
+}
+
+.gia{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .b {
@@ -37,13 +70,12 @@
     font-family: 'Roboto', serif;
 }
 
-/* --- PHẦN CSS MỚI ĐƯỢC SỬA CHO SẢN PHẨM --- */
 
 .c img, .d img {
     /* Tạo khung nền trắng và bo góc cho toàn bộ khối sản phẩm */
     background: #ffffff;
     border-radius: 16px;
-    padding: 16px;
+    padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Đổ bóng nhẹ cho đẹp */
 }
@@ -59,14 +91,32 @@
 }
 
 .c h3, .d h3 {
-    /* Căn chỉnh lại khoảng cách của tên sản phẩm */
+    /* Tên sản phẩm */
     margin-top: 16px;
     margin-bottom: 8px;
     color: #194c44;
 }
 
+.c2{
+    position: relative;
+}
 .c p, .d p {
-    /* Căn chỉnh lại giá tiền */
+    /*  Giá tiền */
     margin: 0;
     color: #261e69;
+}
+.image-box {
+    position: relative;
+    width: 100%;
+}
+
+.discount {
+    position: absolute;
+    top: 8px;       
+    right: 8px;    
+    background: #ff6881;
+    color: white;
+    font-size: 13px;
+    padding: 3px 12px;
+    border-radius: 999px;
 }
